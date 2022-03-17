@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: o",
+      "code": "ENOENT",
+      "stack": "Error: not found: o\n    at getNotFoundError (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:36327:51)\n    at Function.whichSync [as sync] (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:36404:13)\n    at getCommandAbsolutePathSync (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:37969:44)\n    at default_1 (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:37978:32)\n    at /Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:130156:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/Users/wcq/Desktop/task-node",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: o",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: o\n    at getNotFoundError (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:36327:51)\n    at Function.whichSync [as sync] (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:36404:13)\n    at getCommandAbsolutePathSync (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:37969:44)\n    at default_1 (/Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:37978:32)\n    at /Users/wcq/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.22.2/node_modules/pnpm/dist/pnpm.cjs:130156:39"
+    }
+  }
+}
