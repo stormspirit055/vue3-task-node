@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import controlPanelVue from './control-panel.vue';
-import taskPanelVue from './task-panel.vue';
+import controlPanel from './control-panel.vue';
+import taskPanel from './task-panel.vue';
 import { ref } from 'vue'
 
 </script>
 
 <template>
-  <div class="work_space">
-    <control-panelVue />
-    <task-panelVue />
+  <div class="work_area">
+    <control-panel />
+    <task-panel />
   </div>
 </template>
 
 <style lang='less' scoped>
-.work_space{
+.work_area{
   width: 100%;
   height: 100%;
   top: 0;

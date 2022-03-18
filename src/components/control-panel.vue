@@ -1,16 +1,9 @@
 <script setup lang='ts'>
-function _handleDrag(event: DragEvent) {
-  console.log(event)
-}
-function _handleDragStart(event: DragEvent) {
-  console.log(event)
-}
+import task_node_model from './task-node-model.vue'
 </script>
 <template>
-  <div class="control_panel_wrap">
-    <div class="w_btns" >
-       <div class="b_item" draggable="true" @dragstart="_handleDragStart" @drag.prevent="_handleDrag">sql</div>
-    </div>
+  <div class="control_panel_wrap" @dragover.prevent>
+    <task_node_model>sql</task_node_model>
   </div>
 </template>
 <style lang="less" scoped>
@@ -19,15 +12,5 @@ function _handleDragStart(event: DragEvent) {
   width: 200px;
   padding: 10px 20px;
   box-sizing: border-box;
-  .w_btns{
-    .b_item{
-      width: 100px;
-      cursor: grab;
-      .Tcvh(30px);
-      border: 1px solid var(--primary);
-      border-radius: 4px;
-      color: var(--black);
-    }
-  }
 }
 </style>

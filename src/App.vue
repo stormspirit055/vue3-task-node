@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import WorkSpace from './components/work-space.vue'
+import WorkArea from './components/work-area.vue'
 </script>
 
 <template>
-  <WorkSpace />
+  <WorkArea />
 </template>
 
 <style>
