@@ -1,0 +1,319 @@
+.node-model {
+  background-color: #eee;
+  width: 140px;
+  height: 500px;
+}
+.cell-fight,.cell-left {
+  float: left;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+*,:after,:before {
+  box-sizing: border-box;
+}
+body {
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #515a6e;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input::-ms-clear,input::-ms-reveal {
+  display: none;
+}
+a {
+  color: #2d8cf0;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color .2s ease;
+  &:hover {
+    color: #57a3f3;
+  }
+  &:active {
+    color: #2b85e4;
+  }
+}
+a:active,a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+a[disabled] {
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+code,kbd,pre,samp {
+  font-family: Consolas,Menlo,Courier,monospace;
+}
+[class*=-icon-ok],[class*=-icon-run] {
+  color: #2ecc71;
+}
+[class*=-icon-wait] {
+  color: #289de9;
+}
+[class*=-icon-error] {
+  color: #f15e5e;
+}
+[class*=" task-icon"],[class^=task-icon] {
+  display: inline-block;
+  font-family: Ionicons;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+}
+.task-node body,.task-node foreignObject {
+  background-color: transparent;
+  overflow: visible;
+}
+.task-node {
+  &:hover {
+    cursor: grab;
+  }
+}
+.task-node-selected,.task-node:hover {
+  background-color: rgba(227,244,255,.9);
+}
+.task-port {
+  width: 10px;
+  height: 10px;
+  float: right;
+  margin-right: -5px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.task-port-magnet {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: -6px;
+  margin-left: -6px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.task-port-in {
+  cursor: default;
+  margin-top: -6px;
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+}
+.task-common-node {
+  position: fixed;
+  min-width: 140px;
+  height: var(--task-node-height);
+  background-color: hsla(0,0%,100%,.9);
+  border: 1px solid #289de9;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: background-color .2s;
+  width: fit-content;
+  display: flex;
+  &:hover {
+    background-color: rgba(227,244,255,.9);
+  }
+}
+.task-common-node-icon {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  background-color: #289de9;
+  height: 26px;
+  margin: 1px;
+  border-radius: 13px;
+  padding: 0 4px;
+  &:before {
+    float: left;
+    margin: 4px;
+  }
+}
+.task-common-node-name {
+  margin-left: 2px;
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+.task-common-node-status {
+  width: 26px;
+  height: 26px;
+  margin: 1px;
+  border-radius: 100%;
+  float: right;
+  font-size: 18px;
+  &:before {
+    float: left;
+    margin: 4px;
+  }
+}
+.task-port-out {
+  margin-top: 34px;
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+  cursor: crosshair;
+}
+.task-out-common-ls-wrap {
+  height: 1px;
+  float: left;
+  -ms-flex: 1;
+  flex: 1;
+}
+.task-initial-node {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  &:hover {
+    background-color: rgba(227,244,255,.9);
+  }
+}
+.task-initial-node-in-wrap {
+  clear: both;
+  margin-top: -34px;
+  float: left;
+  width: 30px;
+}
+.task-initial-node-out-wrap {
+  clear: both;
+  margin-top: -5px;
+  float: left;
+  width: 30px;
+}
+.task-initial-node-name {
+  float: left;
+  width: 30px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.task-initial-node-icon {
+  float: left;
+  color: #000;
+  font-size: 16px;
+  width: 26px;
+  height: 26px;
+  margin: 1px;
+  border-radius: 100%;
+  &:before {
+    float: left;
+    margin: 4px;
+  }
+}
+.task-work-area {
+  background-color: #fff;
+  position: relative;
+  overflow: auto;
+  cursor: -webkit-grab;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #aeaeae;
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+    transition: background-color .2s;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+  }
+}
+.task-in-out,.task-port-in:hover {
+  border: 1px solid #2d8cf0;
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 1px 3px #57a3f3;
+  border-radius: 50%;
+  margin-top: -1px;
+}
+.is-connected {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 4px 0;
+  border-color: gray transparent transparent;
+  background-color: transparent;
+  border-radius: 0;
+  margin-top: 6px;
+}
+.task-tline {
+  cursor: default;
+}
+.task-tline-con {
+  fill: none;
+  stroke: hsla(0,0%,100%,0);
+  stroke-width: 15px;
+}
+.task-tline-con-wrap {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: var(--task-tline-stroke-width);
+}
+.task-tline-dotted {
+  stroke: rgba(57,202,116,.8);
+  stroke-width: 2px;
+  stroke-dasharray: 5;
+  animation: ant-line 30s infinite linear;
+}
+.task-tline-hover {
+  fill: none;
+  stroke: #aeaeae;
+  stroke-width: 3px;
+}
+.task-node-model {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  border: 1px solid transparent;
+  cursor: -webkit-grab;
+  &:hover {
+    cursor: grab;
+    background-color: #fff;
+    border-color: #289de9;
+  }
+}
+.task-node-model-label {
+  height: 26px;
+  line-height: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.model-tree {
+  padding-left: 15px;
+  li {
+    list-style: none;
+  }
+}
+.model-tree-node {
+  cursor: grab;
+  padding: 3px 10px;
+}
+.model-tree-dir {
+  cursor: pointer;
+  padding: 5px 0;
+  &:hover {
+    background-color: #f5f7fa;
+  }
+}
+/*# sourceMappingURL=vnode.css.map */
